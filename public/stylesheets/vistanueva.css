@@ -1,0 +1,12 @@
+.ordenar {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+main {
+    flex-grow: 1;
+}
+.texto {
+    text-align: center;
+    margin-top: 50px;
+}

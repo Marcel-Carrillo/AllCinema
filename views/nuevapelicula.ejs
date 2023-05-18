@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Nueva Pelicula</title>
+    <link rel="stylesheet" href="/stylesheets/formulario.css">
+    <%- include('linksHead') %>
+  </head>
+  <body>
+    <%- include('navbar') %>
+    <main class="container-fluid">
+      <section class="row">
+        <div class="col-sm-12 col-md-12 col-lg-4">
+          <form
+            action="/peliculas/nuevapelicula"
+            method="post"
+            enctype="multipart/form-data"
+            class="p-5"
+          >
+            <input
+              class="form-control form-control-lg"
+              type="text"
+              placeholder="Nombre de la pelicula"
+              aria-label=".form-control-lg example"
+              name="title"
+            />
+            <br /><br />
+            <input
+              class="form-control form-control-lg"
+              type="text"
+              placeholder="Director"
+              aria-label=".form-control-lg example"
+              name="director"
+            />
+            <br /><br />
+            <input
+              class="form-control form-control-lg"
+              type="text"
+              placeholder="Descripcion"
+              aria-label=".form-control-lg example"
+              name="description_m"
+            />
+            <br /><br />
+            <div>
+              <label for="formFileLg" class="form-label"
+                >Introduce una imagen de la pelicula</label
+              >
+              <input
+                class="form-control form-control-lg"
+                id="formFileLg"
+                type="file"
+                name="img"
+              />
+            </div>
+            <br /><br />
+            <select name="movie_going_id" id="" required>
+              <option value="">Selecciona tu cinefilo</option>
+              <% result.forEach(cinefilo => { %>
+              <option value="<%= cinefilo.movie_going_id %>">
+                <%= cinefilo.first_name %>
+              </option>
+              <% }) %>
+            </select>
+            <br /><br />
+            <button class="button2" type="submit">Añadir</button>
+          </form>
+        </div>
+      </section>
+    </main>
+    <%- include("footer") %>
+  </body>
+</html>

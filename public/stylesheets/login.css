@@ -1,0 +1,26 @@
+body{
+    background-image: url(../images/bg1.jpg);
+    background-position: center;
+    background-size: cover;
+}
+main{
+    flex-grow: 1;
+}
+.row {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+.ordenar {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+.button2 {
+    padding: 1vw;
+    border-radius: 20px !important;
+}
+.button2:hover {
+    background-color: transparent;
+    color: white;
+}

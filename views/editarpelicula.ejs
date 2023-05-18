@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Editar Pelicula</title>
+    <%- include('linksHead') %>
+    <link rel="stylesheet" href="/stylesheets/editarpelicula.css">
+     </head>
+  <body>
+    <%- include('navbar') %>
+    <div class="container-fluid"><main>
+      <div class="row"><form
+        action="/peliculas/editarpelicula/<%= result[0].movie_going_id %>/<%= result[0].movie_id %>"
+        method="post"
+        class="p-5 col-sm-12 col-md-10 col-lg-4"
+      >
+        <input
+          class="form-control form-control-lg"
+          type="text"
+          placeholder="Pelicula"
+          aria-label=".form-control-lg example"
+          name="title"
+          value="<%= result[0].title %>"
+        />
+        <br /><br />
+        <input
+          class="form-control form-control-lg"
+          type="text"
+          placeholder="Director"
+          aria-label=".form-control-lg example"
+          name="director"
+          value="<%= result[0].director %>"
+        />
+        <br /><br />
+        <input
+          class="form-control form-control-lg"
+          type="text"
+          placeholder="Descripcion"
+          aria-label=".form-control-lg example"
+          name="description_m"
+          value="<%= result[0].description_m %>"
+        />
+        <br>
+          <h2 class="text-danger"><%= mensaje %></h2> 
+        <br>
+        <br>
+        <button class="" type="submit">Guardar</button>
+      </form></div>
+      
+    </main></div>
+    
+    <footer><%- include("footer") %></footer>
+  </body>
+</html>

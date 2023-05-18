@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Un cinefilo</title>
+    <link rel="stylesheet" href="/stylesheets/uncinefilo.css">
+    <%- include('linksHead') %>
+  </head>
+  <body>
+    <div class="orden2">
+      <header><%- include('navbar') %></header>
+      <main>
+          <section class="row sec1">
+              <div class="col-12 orden">
+                  <div class="col-12 text-center d-flex justify-content-center mb-5">
+            <div class="card" style="width: 18rem">
+              <img src="/images/cinefilo/<%= resultmovie_going[0].img %>"
+                class="card-img-top"
+                alt="..."
+              />
+              <div class="card-body">
+                <h5 class="card-title">Socio: <%= resultmovie_going[0].first_name %> <%= resultmovie_going[0].last_name %></h5>
+                <p>"<%= resultmovie_going[0].description %>"</p>
+              </div>
+            </div>
+              </div>
+          </div>
+          </section>
+          <section class="row sec2">
+              <% resultmovie.forEach(peliculas => { %>
+              <div class="col-sm-12 col-md-6 col-lg-3 text-center d-flex justify-content-center mb-5">
+                <div class="card" style="width: 18rem">
+                  <img
+                    src="/images/peliculas/<%= peliculas.img %>"
+                    class="card-img-top imagenes"
+                    alt="..."
+                  />
+                  <div class="card-body ordenartexto">
+                    <h5 class="card-title"><%= peliculas.title %></h5>
+                    <h5>Director: <%= peliculas.director %></h5>
+                   <p><%= peliculas.description_m %>.</p> 
+                    <a href="/peliculas/editarpelicula/<%= peliculas.movie_going_id %>/<%= peliculas.movie_id %>" class=""><button>Editar</button></a>
+                    <br>
+                    <a href="/peliculas/deleteMovie/<%= peliculas.movie_going_id %>/<%= peliculas.movie_id %>" class=""><button>Eliminar</button></a>
+                    <br>
+                    <a href="/peliculas/deleteLogicMovie/<%= peliculas.movie_going_id %>/<%= peliculas.movie_id %>" class=""><button>Borrado logico</button></a>
+                  </div>
+                </div>
+              </div>
+              <% }) %>
+            </section>
+      </main>
+      <%- include("footer") %>
+    
+  </div>
+  </body>
+</html>

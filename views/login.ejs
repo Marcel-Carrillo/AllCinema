@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Login</title>
+    <%- include('linksHead') %>
+    <link rel="stylesheet" href="/stylesheets/login.css">
+    
+  </head>
+  <body>
+    <div class="ordenar"><main>
+      <%- include('navbar') %>
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-sm-12 col-md-8 col-lg-4">
+     
+        <form
+          action=""
+          method="post"
+          class="p-5"
+        >
+          <h2 class="text-danger"><%= mensaje %></h2> 
+          <br>
+          <input
+            class="form-control form-control-lg"
+            type="email"
+            placeholder="email"
+            aria-label=".form-control-lg example"
+            name="email"
+          />
+          <br /><br />
+          <input
+            class="form-control form-control-lg"
+            type="password"
+            placeholder="Contraseña"
+            aria-label=".form-control-lg example"
+            name="password"
+          />
+          <br /><br />
+          <button class="button2" type="submit">Login</button>
+        </form></div></div></div>
+      </main>
+    <%- include("footer") %>
+  </div>
+  </body>
+</html>

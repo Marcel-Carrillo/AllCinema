@@ -1,0 +1,48 @@
+body{
+    background-image: url(../images/bg1.jpg);
+    background-position: center;
+    background-size: cover;
+}
+.orden2 {
+    display: flex !important;
+    flex-direction: column !important;
+    height: 100vh !important;
+    padding: 0 !important;
+}
+main {
+        flex-grow: 1;
+}
+.row {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+.orden {
+    display: flex;
+    justify-content: center;
+    padding: 0 !important;
+}
+.card {
+    margin-top: 20px;
+    background-color: lightgrey !important;
+}
+.imagenes {
+    height: 40vh;
+}
+.ordenartexto {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+button {
+    padding: 0.2vw;
+    border: 1px solid transparent;
+    border-radius: 20px !important;
+}
+button:hover {
+    background-color: transparent;
+    color: black;
+    border: 1px solid white;
+}

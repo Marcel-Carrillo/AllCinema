@@ -1,0 +1,14 @@
+.logo{
+    width: 65px;
+    height: 65px;
+    mix-blend-mode:darken;
+}
+.botonbuscar {
+    background-color: transparent;
+    border: 1px solid transparent;
+}
+.botonbuscar:hover {
+    border: 1px solid black;
+    border-radius: 25px;
+    background-color: lightgray;
+}

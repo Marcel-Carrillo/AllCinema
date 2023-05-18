@@ -1,0 +1,25 @@
+main{
+    background-image: url(../images/bg1.jpg);
+    background-position: center;
+    background-size: cover;
+}
+.row {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+.footer {
+    width: 30px;
+    margin: 0 50px;
+}
+.button2 {
+    padding: 1vw;
+    border-radius: 20px !important;
+}
+.button2:hover {
+    background-color: transparent;
+    color: white;
+}
+.form-label {
+    color: white;
+}

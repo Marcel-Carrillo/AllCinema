@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vista principal</title>
+    <link rel="stylesheet" href="/stylesheets/vistaprincipal.css">
+    <%- include('linksHead') %>
+</head>
+<body>
+<div class="ordenar"><header>
+  <%- include('navbar') %>
+</header>
+<div class="container-fluid general">
+<main>
+  <section class="row orden">
+    <div class="col-12 d-flex justify-content-center">
+      <div
+        id="carouselExampleFade"
+        class="carousel slide w-50 carousel-fade"
+        data-bs-ride="carousel"
+        data-bs-interval="2000"
+      >
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img
+              src="/images/portadacarrusel.jpg"
+              class="d-block w-100 imagenescarrusel"
+              alt="..."
+            />
+          </div>
+          <% result.forEach(cinefilos => { %>
+          <a href="/vistaprincipal/uncinefilo/<%= cinefilos.movie_going_id %>">
+            <div class="carousel-item">
+              <img
+                src="/images/cinefilo/<%= cinefilos.img %>"
+                class="d-block w-100 imagenescarrusel"
+                alt="..."
+              />
+            </div>
+          </a>
+          <% }) %>
+        </div>
+        <button
+          class="carousel-control-prev"
+          type="button"
+          data-bs-target="#carouselExampleFade"
+          data-bs-slide="prev"
+        >
+          <span
+            class="carousel-control-prev-icon"
+            aria-hidden="true"
+          ></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button
+          class="carousel-control-next"
+          type="button"
+          data-bs-target="#carouselExampleFade"
+          data-bs-slide="next"
+        >
+          <span
+            class="carousel-control-next-icon"
+            aria-hidden="true"
+          ></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </div>
+  </section>
+    <br>
+    <br>
+  <section class="row orden">
+    <% result.forEach(cinefilos => { %>
+    <div class="col-sm-12 col-md-6 col-lg-3 text-center d-flex justify-content-center mb-5 cartas">
+      <div class="card" style="width: 18rem">
+        <a href="/vistaprincipal/uncinefilo/<%= cinefilos.movie_going_id %>"><img
+          src="/images/cinefilo/<%= cinefilos.img %>"
+          class="card-img-top"
+          alt="..."
+        /></a>
+        <div class="card-body">
+          <h5 class="card-title">Socio: <%= cinefilos.first_name %> <%= cinefilos.last_name %></h5>
+          <h5>"<%= cinefilos.description %>"</h5>
+          <p><img class="logo2" src="/images/logo2.png" alt=""></p>
+        </div>
+      </div>
+    </div>
+    <% }) %>
+  </section>
+</main>
+  <%- include("footer") %>
+</div>
+</body>
+</html>
